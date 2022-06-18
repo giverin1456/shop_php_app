@@ -17,9 +17,11 @@
     <?php foreach ($menus as $menu): ?>
       <?php 
         $orderCount = $_POST[$menu->getName()];
+        // それぞれの$menu(それぞれの商品)の注文数を定義
         $menu->setOrderCount($orderCount);
-        // $totalPaymentに、$menuのgetTotalPriceメソッドで得た値を足してください
+        // それぞれの商品の注文数を$orderCountに代入する
         $totalPayment += $menu->getTotalPrice();
+        // getTotalPriceで商品全ての合計金額
         
       ?>
       <p class="order-amount">
@@ -29,6 +31,7 @@
         個
       </p>
       <p class="order-price"><?php echo $menu->getTotalPrice() ?>円</p>
+      <!-- 金額×注文数を表示 -->
     <?php endforeach ?>
     <!-- $totalPaymentを表示してください -->
     <h3>合計金額: <?php echo $totalPayment?>円</h3>

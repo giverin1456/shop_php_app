@@ -27,6 +27,7 @@ class Menu {
   }
   
   public function setOrderCount($orderCount) {
+    // confirm.phpにて定義$orderCount = $_POST[$menu->getName()];
     $this->orderCount = $orderCount;
   }
   
